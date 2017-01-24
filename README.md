@@ -3,6 +3,7 @@
 Criado por:
 
 Aluno: Janyelson Victor Lacerda de Oliveira.
+
 Matrícula: 11409556.
 
 -Programa criado para realizar ordenação utilizando os seguintes métodos:
@@ -22,9 +23,16 @@ Tabela
 Lidando com o arquivo Main.cpp
 
 Compilar: g++ -o exe_filename Main.cpp
+
 Executar: exe_filename sort < input.in > output.out
 
 Legenda: 
+
 	exe_filename = nome do arquivo .exe
+	
 	sort = escolher entre 1 á 5 de acordo com a tabela mostrada anteriormente
+	
 	input.in = arquivo de entrada para testes
+	
+	output.out = arquivo de saída que será gerado depois da execução
+
