@@ -220,7 +220,12 @@ int main(int argc, char* argv[]) {
 	}
 
 	for(int i = 0; i < siz; i++) {
-      cout << sorts->input[i] << endl;
+		if(i != (siz - 1)) {
+			cout << sorts->input[i] << endl;
+		}
+       		else {
+       			cout << sorts->input[i];
+       		}
 	}
 	free(input);
    free(sorts->input);
