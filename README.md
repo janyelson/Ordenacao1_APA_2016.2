@@ -9,10 +9,14 @@ Matrícula: 11409556.
 
 Tabela
 
-1- Selection Sort 
+1- Selection Sort
+
 2- Insertion Sort
+
 3- Merge Sort
+
 4- Quick Sort (pivô escolhido -> ultimo elemento do vetor)
+
 5- Heap Sort
 
 Lidando com o arquivo Main.cpp
