@@ -32,7 +32,7 @@ Legenda:
 	
 	sort = escolher entre 1 á 5 de acordo com a tabela mostrada anteriormente
 	
-	input.in = arquivo de entrada para testes (primeiro valor para tamanho do vetor)
+	input.in = arquivo de entrada para testes (exemplo de entrada = exemple.in)
 	
 	output.out = arquivo de saída que será gerado depois da execução
 
