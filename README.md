@@ -22,7 +22,7 @@ Tabela
 
 Lidando com o arquivo Main.cpp
 
-Compilar: g++ -o exe_filename Main.cpp
+Compilar: Utilizar Makefile ou g++ -o exe_filename Main.cpp
 
 Executar: exe_filename sort < input.in > output.out
 
