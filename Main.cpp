@@ -1,5 +1,9 @@
 #include <iostream>
 #include <stdlib.h>
+#include <ctime>
+#include <stdio.h>
+#include <algorithm>
+
 
 
 using namespace std;
@@ -8,6 +12,7 @@ class Sorts {
 public:
    int *input;
 	int siz;
+	int *helper;
    Sorts(int *input, int s);
    void selection();
    void insertion();
@@ -25,6 +30,7 @@ public:
 
 Sorts::Sorts(int *in, int s) {
    input = new int[s];
+   helper = new int[s];
    siz = s;
    for(int i = 0;i < siz; i++) {
       input[i] = in[i];
@@ -71,8 +77,8 @@ void Sorts::merge1(int ini, int fim) {
 
 void Sorts::merge2(int ini, int meio, int fim) {
 
-	int *helper = new int[siz];
-		for (int i = ini; i <= fim; i++) {
+	
+	for (int i = ini; i <= fim; i++) {
 		helper[i] = input[i];
 	}
 	int i = ini; int j = meio + 1; int k = ini;
@@ -98,7 +104,7 @@ void Sorts::merge2(int ini, int meio, int fim) {
 		j++;
 	}
 
-	free(helper);
+	//free(helper);
 }
 
 void Sorts::quick(int esq, int dir) {
@@ -197,25 +203,42 @@ int main(int argc, char* argv[]) {
 
 	Sorts *sorts = new Sorts(input, siz);
 
+	clock_t startTime, endTime;
+
 	switch(chooseSort) {
 		case 1:
+			startTime = clock();
 			sorts->selection();
+			endTime = clock();
 			break;
 
 		case 2:
+		   startTime = clock();
 			sorts->insertion();
+			endTime = clock();
 			break;
 
 		case 3:
+		   startTime = clock();
 			sorts->merge1(0, siz - 1);
+			endTime = clock();
 			break;
 
 		case 4:
+		   startTime = clock();
 			sorts->quick(0, siz - 1);
+			endTime = clock();
 			break;
 
 		case 5:
+		   startTime = clock();
 			sorts->heap();
+			endTime = clock();
+			break;
+		case 6:
+			startTime = clock();
+			std::sort(input, input+(siz-1));
+			endTime = clock();
 			break;
 	}
 
@@ -223,11 +246,13 @@ int main(int argc, char* argv[]) {
 		if(i != (siz - 1)) {
 			cout << sorts->input[i] << endl;
 		}
-       		else {
-       			cout << sorts->input[i];
-       		}
+      else {
+      	cout << sorts->input[i];
+      }
 	}
-	free(input);
+
+   printf("\nTempo gasto: %4.0f ms\n\n",1000*(double)(endTime-startTime)/(double)(CLOCKS_PER_SEC));
+   free(input);
    free(sorts->input);
-	free(sorts);
+   free(sorts);
 }
